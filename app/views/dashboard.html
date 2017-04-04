@@ -5,7 +5,7 @@
 
 <section class="ui raised segment">
   <header class="ui header">
-    Todo List
+    ${member.firstname} ${member.lastname}'s Todo List
   </header>
   <table class="ui fixed table">
     <thead>
@@ -19,7 +19,8 @@
       #{list items:todolist, as:'todo'}
       <tr>
         <td> ${todo.title} </td>
-        #{/list}
+        <td> <a href="/dashboard/${member.id}/deletetodo/${todo.id} " class="ui tiny red button"> Delete </a> </td>
+      #{/list}
     </div>
     </tbody>
   </table>
@@ -33,9 +34,3 @@
   </div>
   <button class="ui blue submit button">Add Todo</button>
 </form>
-
-#{list items:todolist, as:'todo'}
-<tr>
-  <td> ${todo.title} </td>
-  <td> <a href="/dashboard/${member.id}/deletetodo/${todo.id} " class="ui tiny red button"> Delete </a> </td>
-  #{/list}
