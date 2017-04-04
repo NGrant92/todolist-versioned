@@ -37,4 +37,5 @@ public class Dashboard extends Controller
     Logger.info("Deleting " + todo.title);
     redirect("/dashboard");
   }
+  //minor edit
 }
